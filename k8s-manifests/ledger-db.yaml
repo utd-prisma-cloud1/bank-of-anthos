@@ -27,11 +27,13 @@ spec:
       labels:
         app: ledger-db
     spec:
-      hostIPC: true
       serviceAccountName: default
       containers:
         - name: postgres
-          image: gcr.io/bank-of-anthos-ci/ledger-db:v0.5.11
+          image: us-central1-docker.pkg.dev/panw-utd-public-cloud/utd-demo-images/utd-cnsp/bank-of-anthos-ci/ledger-db:v0.5.11
+          securityContext:
+            allowPrivilegeEscalation: false          
+            runAsNonRoot: true
           ports:
             - containerPort: 5432
           env:

@@ -41,15 +41,13 @@ spec:
               - all
           privileged: false
           readOnlyRootFilesystem: true
-        image: gcr.io/bank-of-anthos-ci/balancereader:v0.5.10
+        image: us-central1-docker.pkg.dev/panw-utd-public-cloud/utd-demo-images/utd-cnsp/bank-of-anthos-ci/balancereader:v0.5.10
         volumeMounts:
         - name: publickey
           mountPath: "/tmp/.ssh"
           readOnly: true
         - mountPath: /tmp
           name: tmp
-        - name: alert-hostpath
-          mountPath: /etc/docker          
         env:
         - name: VERSION
           value: "v0.5.10"
@@ -117,9 +115,6 @@ spec:
             path: publickey
       - emptyDir: {}
         name: tmp
-      - name: alert-hostpath
-        hostPath:
-          path: "/etc/docker"        
 ---
 apiVersion: v1
 kind: Service

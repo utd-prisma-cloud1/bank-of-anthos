@@ -25,7 +25,6 @@ spec:
       labels:
         app: contacts
     spec:
-      hostNetwork: true
       serviceAccountName: default
       terminationGracePeriodSeconds: 5
       securityContext:
@@ -42,7 +41,7 @@ spec:
               - all
           privileged: false
           readOnlyRootFilesystem: true
-        image: gcr.io/bank-of-anthos-ci/contacts:v0.5.11
+        image: us-central1-docker.pkg.dev/panw-utd-public-cloud/utd-demo-images/utd-cnsp/bank-of-anthos-ci/contacts:v0.5.11
         volumeMounts:
         - name: publickey
           mountPath: "/tmp/.ssh"

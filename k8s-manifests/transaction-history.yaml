@@ -41,7 +41,7 @@ spec:
               - all
           privileged: false
           readOnlyRootFilesystem: true
-        image: gcr.io/bank-of-anthos-ci/transactionhistory:v0.5.10
+        image: us-central1-docker.pkg.dev/panw-utd-public-cloud/utd-demo-images/utd-cnsp/bank-of-anthos-ci/transactionhistory:v0.5.10
         volumeMounts:
         - name: publickey
           mountPath: "/tmp/.ssh"

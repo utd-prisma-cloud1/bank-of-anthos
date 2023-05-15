@@ -38,13 +38,13 @@ spec:
         - containerPort: 8080
           hostPort: 8080        
         securityContext:
-          allowPrivilegeEscalation: true
+          allowPrivilegeEscalation: false
           capabilities:
             drop:
               - all
-          privileged: true
-          readOnlyRootFilesystem: false
-        image: gcr.io/bank-of-anthos-ci/frontend:v0.5.11
+          privileged: false
+          readOnlyRootFilesystem: true
+        image: us-central1-docker.pkg.dev/panw-utd-public-cloud/utd-demo-images/utd-cnsp/bank-of-anthos-ci/frontend:v0.5.11
         volumeMounts:
         - name: publickey
           mountPath: "/tmp/.ssh"
