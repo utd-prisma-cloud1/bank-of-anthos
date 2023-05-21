@@ -38,7 +38,14 @@ When a pull request is opened on the `main` branch, this Github Action is trigge
       - `log_level`: The log level for the action. In this case, it is set to `WARNING`.
       - `skip_check`: Filter scan to run on all check but a specific check identifier(blacklist), You can specify multiple checks separated by comma delimiter, clashes with check. In this case, it is set to `LOW`.
       - `check`: Filter scan to run only on a specific check identifier, You can specify multiple checks separated by comma delimiter. In this case, it is set to `CKV_K8S*`.
-   
+
+### Required Workflow Secrets
+Below are the secrets that are passed as variables to this Github Action:
+- **PCC_CONSOLE_URL:** Prisma Cloud Compute URL
+- **PCC_ACCESS_KEY_ID:** Prisma Cloud Access Key ID
+- **PCC_SECRET_ACCESS_KEY:** Prisma Cloud Secret Access Key
+- **PC_API_KEY:** Prsima Cloud Access Key ID and Secret Key in the format `<PCC_SECRET_ACCESS_KEY>::<PC_API_KEY>`
+
 ## Conclusion
 
 Overall, this Github Action provides an easy and automated way to scan Kubernetes manifests for vulnerabilities using Prisma Cloud.
