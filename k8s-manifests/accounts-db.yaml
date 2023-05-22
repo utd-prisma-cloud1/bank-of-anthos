@@ -35,7 +35,7 @@ spec:
       serviceAccountName: default
       containers:
       - name: accounts-db
-        image: gcr.io/bank-of-anthos-ci/accounts-db:v0.5.11
+        image: us-central1-docker.pkg.dev/panw-utd-public-cloud/utd-demo-images/utd-cnsp/bank-of-anthos-ci/accounts-db:v0.5.11
         envFrom:
           - configMapRef:
               name: environment-config

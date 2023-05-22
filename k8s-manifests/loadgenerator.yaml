@@ -45,7 +45,7 @@ spec:
               - all
           privileged: false
           readOnlyRootFilesystem: true
-        image: gcr.io/bank-of-anthos-ci/loadgenerator:v0.5.11
+        image: us-central1-docker.pkg.dev/panw-utd-public-cloud/utd-demo-images/utd-cnsp/bank-of-anthos-ci/loadgenerator:v0.5.11
         env:
         - name: FRONTEND_ADDR
           value: "frontend:80"
