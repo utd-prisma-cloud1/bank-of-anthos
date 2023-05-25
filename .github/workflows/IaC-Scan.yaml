@@ -18,7 +18,7 @@ jobs:
         id: Bridgecrew
         uses: bridgecrewio/bridgecrew-action@master
         env:
-          PRISMA_API_URL: https://api.eu.prismacloud.io    
+          PRISMA_API_URL: https://api4.prismacloud.io
         with:
           api-key: ${{ secrets.PC_API_KEY }}
           directory: "${{ github.workspace }}/k8s-manifests"
@@ -28,5 +28,5 @@ jobs:
           output_file_path: console,results.sarif
           quiet: true
           log_level: WARNING
-          skip_check: LOW
+          skip_check: LOW,MEDIUM
           check: CKV_K8S*

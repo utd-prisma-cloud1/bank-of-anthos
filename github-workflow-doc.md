@@ -14,7 +14,7 @@ When a pull request is opened on the `main` branch, this Github Action is trigge
      id: Bridgecrew
      uses: bridgecrewio/bridgecrew-action@master
      env:
-       PRISMA_API_URL: https://api.eu.prismacloud.io    
+       PRISMA_API_URL: https://api4.prismacloud.io
      with:
        api-key: ${{ secrets.PC_API_KEY }}
        directory: "${{ github.workspace }}/k8s-manifests"

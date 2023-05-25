@@ -38,7 +38,8 @@ spec:
         image: us-central1-docker.pkg.dev/panw-utd-public-cloud/utd-demo-images/utd-cnsp/bank-of-anthos-ci/accounts-db:v0.5.11
         securityContext:
           allowPrivilegeEscalation: false
-          runAsNonRoot: true        
+          # Commenting this out because it's a breaking change
+          #runAsNonRoot: true        
         envFrom:
           - configMapRef:
               name: environment-config
