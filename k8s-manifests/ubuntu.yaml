@@ -2,35 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: auto-run
-  name: auto-run
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: auto-run
-  template:
-    metadata:
-      labels:
-        app: auto-run
-    spec:
-      containers:
-      - image: us-central1-docker.pkg.dev/panw-utd-public-cloud/utd-demo-images/utd-cnsp/bank-of-anthos-ci/ubuntu:malware
-        name: auto-run
-        securityContext:
-          allowPrivilegeEscalation: false    
-        resources:
-          requests:
-            cpu: 100m
-            memory: 128Mi
-          limits:
-            cpu: 250m
-            memory: 512Mi              
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  labels:
     app: manual-run
   name: manual-run
 spec:
