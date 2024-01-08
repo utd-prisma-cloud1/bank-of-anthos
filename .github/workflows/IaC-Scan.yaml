@@ -1,0 +1,32 @@
+name: Prisma Cloud IaC Scan
+on:
+  pull_request:
+    branches:
+      - 'main'
+
+jobs:
+  kubernetes-scan:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Run Kubernetes Scan
+        id: Bridgecrew
+        uses: bridgecrewio/bridgecrew-action@master
+        env:
+          PRISMA_API_URL: https://api4.prismacloud.io
+        with:
+          api-key: ${{ secrets.PC_API_KEY }}
+          directory: "${{ github.workspace }}/k8s-manifests"
+          soft_fail: false
+          framework: kubernetes
+          output_format: cli,sarif
+          output_file_path: console,results.sarif
+          quiet: true
+          log_level: WARNING
+          skip_check: LOW
+          check: CKV_K8S*
