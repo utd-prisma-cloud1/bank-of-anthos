@@ -41,7 +41,7 @@ When a pull request is opened on the `main` branch, this Github Action is trigge
    
 ## Conclusion
 
-Overall, this Github Action provides an easy and automated way to scan Kubernetes manifests for vulnerabilities using Prisma Cloud.
+This Github Action provides an easy and automated way to scan Kubernetes manifests for vulnerabilities using Prisma Cloud.
 - Prisma Cloud provides an effective way to scan IaC for vulnerabilities and misconfigurations. 
 - The GitHub Actions workflow we've demonstrated automates this process, allowing developers to identify and fix issues early in the software development lifecycle. 
 - By integrating Prisma Cloud scans into your CI/CD pipeline, you can ensure that your IaC is secure and compliant before its deployed. 
